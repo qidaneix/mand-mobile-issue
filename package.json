@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "mand-mobile": "^1.5.0",
     "vue": "^2.5.16",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0"
@@ -15,6 +16,8 @@
     "@vue/cli-plugin-babel": "^3.0.0-rc.5",
     "@vue/cli-plugin-typescript": "^3.0.0-rc.5",
     "@vue/cli-service": "^3.0.0-rc.5",
+    "svg-sprite-loader": "^3.8.0",
+    "ts-import-plugin": "^1.5.4",
     "vue-template-compiler": "^2.5.16"
   }
 }

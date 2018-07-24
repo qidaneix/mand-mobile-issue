@@ -1,17 +1,29 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <md-icon name="chat-46"></md-icon>
+    <md-button>Primary</md-button>
+    <md-button disabled>Primary Disabled</md-button>
+    <md-tab-bar :show-ink-bar="true">
+      <div>
+        <md-icon name="chat-46" size="sm"></md-icon>
+        他
+      </div>
+    </md-tab-bar>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import { Button, Icon, TabBar } from 'mand-mobile';
+
+import '@/assets/chat-46.svg';
 
 @Component({
   components: {
-    HelloWorld,
+    [Button.name]: Button,
+    [Icon.name]: Icon,
+    [TabBar.name]: TabBar,
   },
 })
 export default class App extends Vue {}
