@@ -17,7 +17,9 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { Button, Icon, TabBar } from 'mand-mobile';
 
-import '@/assets/chat-46.svg';
+import svg from '@/chat-46.svg';
+
+console.log(svg);
 
 @Component({
   components: {
