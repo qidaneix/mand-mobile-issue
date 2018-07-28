@@ -1,29 +1,18 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <md-icon name="chat-46"></md-icon>
-    <md-button>Primary</md-button>
-    <md-button disabled>Primary Disabled</md-button>
-    <md-tab-bar :show-ink-bar="true">
-      <div>
-        <md-icon name="chat-46" size="sm"></md-icon>
-        他
-      </div>
-    </md-tab-bar>
+    
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { Button, Icon, TabBar } from 'mand-mobile';
-
-import '@/assets/chat-46.svg';
+import {ImageReader} from 'mand-mobile';
+import imageProcessor from 'mand-mobile/components/image-reader/image-processor';
 
 @Component({
   components: {
-    [Button.name]: Button,
-    [Icon.name]: Icon,
-    [TabBar.name]: TabBar,
+    [ImageReader.name]: ImageReader,
   },
 })
 export default class App extends Vue {}
