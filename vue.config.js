@@ -3,26 +3,30 @@ const path = require('path')
 const resolve = file => path.resolve(__dirname, file)
 
 module.exports = {
-  configureWebpack: {
-    module: {
-      rules: [
-        {
-          test: /\.tsx?$/,
-          loader: 'ts-loader',
-          options: {
-            appendTsSuffixTo: [/\.vue$/],
-            transpileOnly: true,
-            getCustomTransformers: () => ({
+  chainWebpack: config => {
+    // mand-mobile 配置 typescript
+    config.module
+      .rule('ts')
+      .use('ts-loader')
+        .loader('ts-loader')
+          .tap(options => {
+            options.appendTsSuffixTo = [/\.vue$/]
+            options.transpileOnly = true
+            options.getCustomTransformers = () => ({
               before: [
                 require('ts-import-plugin')({
-                  libraryName: 'mand-mobile',
-                  libraryDirectory: 'lib-vw',
+                  "libraryName": "mand-mobile",
+                  "libraryDirectory": 'lib-vw'
                 })
               ]
             })
-          }
-        }
-      ]
-    }
+            return options
+          })
+  },
+  css: {
+    sourceMap: true
+  },
+  devServer: {
+    open: true
   }
 };
