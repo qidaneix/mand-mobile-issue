@@ -1,12 +1,26 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <md-field-item
-      title="一个标题"
-      arrow="arrow-right"
-      value="内容靠右展示"
-      align="right">
-    </md-field-item>
+    <md-field>
+      <md-field-item
+        title="一个标题"
+        align="right"
+        arrow="arrow-right"
+        :value="value">
+      </md-field-item>
+      <md-field-item
+        title="俩个标题"
+        align="right"
+        arrow="arrow-right"
+        value="anything">
+      </md-field-item>
+      <md-field-item
+        title="俩个标题"
+        align="right"
+        arrow="arrow-right"
+        :value="value2">
+      </md-field-item>
+    </md-field>
   </div>
 </template>
 
@@ -20,7 +34,10 @@ import { Field, FieldItem } from 'mand-mobile';
     [FieldItem.name]: FieldItem,
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  public value = 'something';
+  public value2 = 'something else';
+}
 </script>
 
 <style>
