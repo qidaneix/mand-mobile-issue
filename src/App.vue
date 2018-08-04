@@ -1,14 +1,22 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <md-button type="primary">TEST BUTTON</md-button>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Button } from 'mand-mobile';
 
-@Component
-export default class App extends Vue {}
+@Component({
+  components: {
+    [Button.name]: Button,
+  },
+})
+export default class App extends Vue {
+
+}
 </script>
 
 <style>
